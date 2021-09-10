@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import bgStars from './app-statics/bg-stars.svg';
-import bgHills from './app-statics/pattern-hills.svg';
+import bgStars from '../statics/images/bg-stars.svg';
+import bgHills from '../statics/images/pattern-hills.svg';
 
 export const Color = styled.div`
   height: 100vh;
