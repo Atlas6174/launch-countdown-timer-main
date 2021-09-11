@@ -1,19 +1,23 @@
 import React from 'react';
 
-import Counter from './countdown/Counter';
-import Media from './media/Media';
+import Counter from './Counter';
+import Media from './Media';
 
-import { Background } from './App.styles';
-
+import StyledApp from './App.styles';
 
 const App = () => {
   return (
-    <Background>
-      <Counter
-	title="WE'R LAUNCHIN SOON"
-	finalDate={new Date("Sep 13, 21")}/>
-      <Media />
-    </Background>
+    <StyledApp>
+      <StyledApp.StarsLayer>
+	<StyledApp.HillsLayer>
+	  <Counter
+	    title="WE'RE LAUNCHING SOON"
+	    finalDate={new Date("Sep 13, 21")}
+	  />
+	  <Media />
+	</StyledApp.HillsLayer>
+      </StyledApp.StarsLayer>
+    </StyledApp>
   );
 };
 

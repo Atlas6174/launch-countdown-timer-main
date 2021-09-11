@@ -5,14 +5,14 @@ import React, {
 
 import FlipDown from "./FlipDown";
 
-import { CounterWrapper, Container } from "./Counter.styles";
+import StyledCounter from "./Counter.styles";
 
-const Counter = props => {
+const Counter = ({ title, finalDate }) => {
   const [time, setTime] = useState(
-      {days: 0, hours: 0, minutes: 0, seconds: 0 }
+      {days: '00', hours: '00', minutes: '00', seconds: '00'}
   );
   const [oldTime, setOldTime] = useState(
-    {days: 0, hours: 0, minutes: 0, seconds: 0}
+    {days: '01', hours: '01', minutes: '01', seconds: '01'}
   );
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Counter = props => {
   // Return an Object with the new time to show and its ol values
   const updateTime = () => {
     const start = new Date();
-    const remainTime =  props.finalDate - start;
+    const remainTime =  finalDate - start;
 
     // Define the new time
     const days = Math.floor(remainTime / (24 * 60 * 60 * 1000));
@@ -41,9 +41,11 @@ const Counter = props => {
     const seconds = Math.floor((remainTime % (60 * 1000)) / 1000);
 
     // Define the old time
-    const oldDays = days - 1; // The clock will end before this reach 0
+    const oldDays = days - 1;
 
-    // In the other cases, this situation must be handled
+    // The old values are equal to the new ones plus one, except when the new
+    // values reach its maximum (the days haven't maximum, so, its value
+    // shouldn't be handled)
     const oldHours = hours === 23
       ? 0
       : hours + 1;
@@ -87,15 +89,31 @@ const Counter = props => {
   }
 
   return (
-    <CounterWrapper>
-      <h1>{props.title}</h1>
-      <Container>
+    <StyledCounter>
+      <StyledCounter.Title>{title}</StyledCounter.Title>
+      <div className="counter-container">
+	<FlipDown
+	  newValue={time.days}
+	  oldValue={oldTime.days}
+	  label="DAYS"
+	/>
+	<FlipDown
+	  newValue={time.hours}
+	  oldValue={oldTime.hours}
+	  label="HOURS"
+	/>
+	<FlipDown
+	  newValue={time.minutes}
+	  oldValue={oldTime.minutes}
+	  label="MINUTES"
+	/>
 	<FlipDown
 	  newValue={time.seconds}
 	  oldValue={oldTime.seconds}
+	  label="SECONDS"
 	/>
-      </Container>
-    </CounterWrapper>
+      </div>
+    </StyledCounter>
   );
 }
 

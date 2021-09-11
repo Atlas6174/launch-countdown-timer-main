@@ -2,21 +2,23 @@ import styled from 'styled-components';
 import bgStars from '../statics/images/bg-stars.svg';
 import bgHills from '../statics/images/pattern-hills.svg';
 
-export const Color = styled.div`
+const StyledApp = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: hsl(235, 16%, 14%);
+  
+  font-family: ${p => p.theme.fontFamily};
 `
 
-export const Stars = styled.div`
+const StarsLayer = styled.div`
   display: block;
   height: 100vh;
   width: 100vw;
   background-image: url(${bgStars});
-  background-size: cover;
+  background-size: cover; 
 `
 
-export const Hills = styled.div`
+const HillsLayer = styled.div`
   height: 100vh;
   width: 100vw;
   background-image: url(${bgHills});
@@ -25,16 +27,7 @@ export const Hills = styled.div`
   background-position: bottom;
 `
 
-export const Background = props => {
-  return (
-    <Color>
-      <Stars>
-	<Hills>
-	  {props.children}
-	</Hills>
-      </Stars>
-    </Color>
-  )
-}
+StyledApp.StarsLayer = StarsLayer;
+StyledApp.HillsLayer = HillsLayer;
 
-
+export default StyledApp;
