@@ -5,7 +5,11 @@ import StyledMedia from './Media.styles';
 const Media = () => {
   return (
     <StyledMedia>
-      Media
+      <StyledMedia.Container>
+	<StyledMedia.Icon className="fab fa-facebook-square" />
+	<StyledMedia.Icon className="fab fa-pinterest" />
+	<StyledMedia.Icon className="fab fa-instagram" />
+      </StyledMedia.Container>
     </StyledMedia>
   );
 }

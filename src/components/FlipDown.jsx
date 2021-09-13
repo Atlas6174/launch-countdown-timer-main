@@ -4,20 +4,20 @@ import StyledFlipDown from './FlipDown.styles';
 const FlipDown = ({ newValue, oldValue, label }) => {
   return (
     <StyledFlipDown>
-      <StyledFlipDown.Animated3dContainer>
-	<div className="flip flip-upper flip-upper-static">
+      <StyledFlipDown.AnimationContainer>
+	<StyledFlipDown.Upper>
 	  <div className="content">{newValue}</div>
-	</div>
-	<div key={oldValue} className="flip flip-upper dinamic">
+	</StyledFlipDown.Upper>
+	<StyledFlipDown.Upper key={`${label}${oldValue}`} className="dinamic">
 	  <div className="content">{oldValue}</div>
-	</div>
-	<div className="flip flip-lower flip-lower-static">
+	</StyledFlipDown.Upper>
+	<StyledFlipDown.Lower>
 	  <div className="content">{oldValue}</div>
-	</div>
-	<div key={newValue} className="flip flip-lower dinamic">
+	</StyledFlipDown.Lower>
+	<StyledFlipDown.Lower key={`${label}${newValue}`} className="dinamic">
 	  <div className="content">{newValue}</div>
-	</div>
-      </StyledFlipDown.Animated3dContainer>
+	</StyledFlipDown.Lower>
+      </StyledFlipDown.AnimationContainer>
       <StyledFlipDown.Label>
 	{label}
       </StyledFlipDown.Label>

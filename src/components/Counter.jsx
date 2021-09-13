@@ -91,7 +91,7 @@ const Counter = ({ title, finalDate }) => {
   return (
     <StyledCounter>
       <StyledCounter.Title>{title}</StyledCounter.Title>
-      <div className="counter-container">
+      <StyledCounter.Container>
 	<FlipDown
 	  newValue={time.days}
 	  oldValue={oldTime.days}
@@ -112,7 +112,7 @@ const Counter = ({ title, finalDate }) => {
 	  oldValue={oldTime.seconds}
 	  label="SECONDS"
 	/>
-      </div>
+      </StyledCounter.Container>
     </StyledCounter>
   );
 }
