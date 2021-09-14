@@ -168,11 +168,11 @@ const Lower = styled(Flip)`
 	radial-gradient(
 	  circle at 0 0,
 	  ${p => p.theme.veryDarkBlackBlue} .15rem,
-	  rgba(0, 0, 0, .10) .16rem),
+	  transparent .16rem),
 	radial-gradient(
 	  circle at 100% 0,
 	  ${p => p.theme.veryDarkBlackBlue} .15rem,
-	  rgba(0, 0, 0, .10) .16rem);     
+	  transparent .16rem);     
     }
   }
 `
@@ -188,7 +188,7 @@ const Label = styled.h2`
   @media(max-width: 720px) {
     margin: .75rem 0 0 0;
 
-    font-size: .35rem;
+    font-size: .4rem;
     letter-spacing: .225rem;
   }
 `

@@ -8,6 +8,7 @@ import FlipDown from "./FlipDown";
 import StyledCounter from "./Counter.styles";
 
 const Counter = ({ title, finalDate }) => {
+
   const [time, setTime] = useState(
       {days: '00', hours: '00', minutes: '00', seconds: '00'}
   );

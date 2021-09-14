@@ -5,6 +5,11 @@ import Media from './Media';
 
 import StyledApp from './App.styles';
 
+// The final date to pass to the Counter component
+const fiveDays = 1000 * 60 * 60 * 24 * 5;
+const currDate = new Date();
+const finalDate = currDate.getTime() + fiveDays;
+
 const App = () => {
   return (
     <StyledApp>
@@ -12,7 +17,7 @@ const App = () => {
 	<StyledApp.HillsLayer>
 	  <Counter
 	    title="WE'RE LAUNCHING SOON"
-	    finalDate={new Date("Sep 13, 21")}
+	    finalDate={finalDate}
 	  />
 	  <Media />
 	</StyledApp.HillsLayer>

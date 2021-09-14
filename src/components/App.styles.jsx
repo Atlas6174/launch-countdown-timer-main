@@ -25,6 +25,11 @@ const HillsLayer = styled.div`
   background-size: 100% 25%;
   background-repeat: no-repeat;
   background-position: bottom;
+  
+  @media(max-width: 720px) {
+    background-size: 45rem;
+    background-position: 100% 100%;
+  }
 `
 
 StyledApp.StarsLayer = StarsLayer;
