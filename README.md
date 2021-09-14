@@ -37,9 +37,11 @@ Actually, the last requeriment (the bonus), is the real change here.
 ### Screenshot
 
 Mobile view of the final app:
+
 ![Mobile layout](screenshots/mobile-layout.png)
 
 And the desktop view:
+
 ![Dektop layout](screenshots/desktop-layout.png)
 
 ### Links
