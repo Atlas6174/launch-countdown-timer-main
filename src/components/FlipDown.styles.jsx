@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 // Main Component
-const StyledFlipDown = styled.div`
+export const StyledFlipDown = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -34,7 +34,7 @@ const flipDownLower = keyframes`
 `
 
 // Animation Container
-const AnimationContainer = styled.div`
+export const AnimationContainer = styled.div`
   position: relative;
   height: 8.5rem;
   width: 9.25rem;
@@ -58,7 +58,7 @@ const AnimationContainer = styled.div`
 `
 
 // Base Flip Component
-const Flip = styled.div`
+export const Flip = styled.div`
   position: absolute;
   width: 100%;
   height: 50%;
@@ -71,7 +71,6 @@ const Flip = styled.div`
   transform-style: preserve-3d; 
 `
 
-// UpperFlip component (extends the styles of Flip)
 const Upper = styled(Flip)`
   top: 0;
   border-bottom: 1px solid ${p => p.theme.veryDarkBlackBlue};
@@ -124,7 +123,6 @@ const Upper = styled(Flip)`
   }
 `
 
-// LowerFlip component (extends the styles of Flip)
 const Lower = styled(Flip)`
   bottom: 0;
   border-top: 1px solid ${props => props.theme.veryDarkBlackBlue};
@@ -177,7 +175,11 @@ const Lower = styled(Flip)`
   }
 `
 
-const Label = styled.h2`
+Flip.Upper = Upper;
+Flip.Lower = Lower;
+
+
+export const Label = styled.h2`
   margin: 2rem 0 0 0;
 
   text-align: center;
@@ -192,10 +194,3 @@ const Label = styled.h2`
     letter-spacing: .225rem;
   }
 `
-
-StyledFlipDown.AnimationContainer = AnimationContainer;
-StyledFlipDown.Upper = Upper;
-StyledFlipDown.Lower = Lower;
-StyledFlipDown.Label = Label;
-
-export default StyledFlipDown;
